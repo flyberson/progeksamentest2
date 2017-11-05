@@ -1,14 +1,17 @@
 <html>
 <header><title>This is title</title>
     <link rel="stylesheet" href="../css/styles.css"></header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/javascript/js3.js" ></script>
 <body>
 <h1>Startsiden</h1>
+<button onclick="getpoke()"></button>
 
 <?php
 include 'databaseconnection.php';
 if ($result->num_rows > 0) {
 // output data of each row
-    echo "<table>
+    echo "<table id='table1'>
 
     <tr>
 
