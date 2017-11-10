@@ -16,6 +16,7 @@
 
 
 include 'databaseconnection.php';
+include 'getmicrolink.php';
 $sql = "SELECT * FROM linklist";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -37,6 +38,9 @@ if ($result->num_rows > 0) {
         <tbody>
         <?php
     while ($row = $result->fetch_assoc()) {
+        $output =curlmicro($row["url"]);
+
+
 
         echo "<tr>";
         echo "<td>";
@@ -55,6 +59,10 @@ if ($result->num_rows > 0) {
 
         echo "<td>";
         echo $row["dato"];
+        echo "</td>";
+
+        echo "<td>";
+        echo "<img src='$output' width='120' height='80'> </img>";
         echo "</td>";
         echo "</tr>";
 

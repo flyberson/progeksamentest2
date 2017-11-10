@@ -8,7 +8,10 @@ $result = $conn->query($sql);
 
 while ($row = $result->fetch_assoc()) {
 
+    if(!isset($myObj)){
+$myObj= new stdClass();}
     $myObj->title=$row["title"];
+
     $myObj->url=$row["url"];
     $myObj->kategori=$row["kategori"];
     $myObj->date=$row["dato"];
