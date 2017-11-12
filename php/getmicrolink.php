@@ -37,6 +37,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 $resultj = json_decode($result);
 $imgurl= "https://cdn.browshot.com/static/images/not-found.png";
+// object json $object->key->key->value;
 if(isset($resultj->data->logo->url)){
 $imgurl = $resultj->data->logo->url;}
 return $imgurl;
